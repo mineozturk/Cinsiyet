@@ -1,0 +1,60 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# mineozturk 
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Musteri Get Servisi  [/Cinsiyet]
+
+### Müşteriler [GET]
+
++ Response 200 (application/json)
+
+        
+            {
+                "CinsiyetListesi": [
+                    {
+                        "ID": 1,
+                        "Cinsiyet": "Kadın"
+                    }, 
+                    {
+                        "ID": 2,
+                       "Cinsiyet": "Erkek"
+                    },  
+                    {
+                        "ID": 3,
+                       "Cinsiyet": "LGBTİ+"
+                    }
+                    
+                ]
+            }
+        
+
+### Yeni Müşteri [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+           
+                        "ID": 2,
+                       "Cinsiyet": "Erkek"
+        
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /Cinsiyet/2
+
+    + Body
+
+            {
+                 "result":"Success",
+                 "message":"Kayıt işleminiz başarıyla yapılmıştır.",
+            }
